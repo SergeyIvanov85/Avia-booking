@@ -1,4 +1,5 @@
 import createElement from "./createElement.js";
+import declOfNum from "./declOfNum.js";
 
 const createCokpit = (titleText) => {
   const cokpit = createElement('div', {
@@ -69,7 +70,8 @@ const createBlockSeat = (n, count) => {
   return fuselage;
 };
 
-const createAirplane = (title, shceme) => {
+const createAirplane = (title, tourData) => {
+  const scheme = tourData.scheme;
   const choisesSeat = createElement('form', {
     className: 'choises-seat',
   });
@@ -83,7 +85,7 @@ const createAirplane = (title, shceme) => {
   
   let n = 1;
 
-  const elements = shceme.map((type) => {
+  const elements = scheme.map((type) => {
     if (type === 'exit') {
       return createExit();
     }
@@ -101,15 +103,17 @@ const createAirplane = (title, shceme) => {
   choisesSeat.append(plane);
 
   return choisesSeat;
+
 };
 
 
-const airplane = (main, data) => {
-  const title = 'Выберете места';
-  const shceme = ['exit', 11, 'exit', 1, 'exit', 17, 'exit'];
+const airplane = (main, data, tourData) => {
+  const title = `Выберете ${declOfNum(data.length, ['место','места','мест'])}`;
 
 
-  main.append(createAirplane(title, shceme));
+  main.append(createAirplane(title, tourData));
+ 
 };
+
 
 export default airplane;
