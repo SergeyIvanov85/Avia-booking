@@ -29,13 +29,15 @@ const createFormPerson = (n) => {
     required: true,
   });
 
+  fieldName.append(labelName, inputName);
+
   const fieldTicket = createElement('div', {
     className: 'field',
   });
 
   const labelTicket = createElement('label', {
     className: 'field__label',
-    for: `name${n}`,
+    for: `ticket${n}`,
     textContent: 'Номер билета (10 цифр)',
   });
 
@@ -46,11 +48,9 @@ const createFormPerson = (n) => {
     type: 'text',
     placeholder: 'Номер билета',
     required: true,
-    minLength: '10',
-    maxLength: '10',
+    minLength: 10,
+    maxLength: 10,
   });
-
-  fieldName.append(labelName, inputName);
   
   fieldTicket.append(labelTicket, inputTicket);
 
