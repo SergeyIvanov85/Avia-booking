@@ -4,10 +4,12 @@ import readyPlane from "./modules/readyPlane.js";
 import getData from "./service/getTour.js";
 
 const init = async (selectorApp, title) => {
+
   const app = document.querySelector(selectorApp);
+
   const data = await getData();
 
-  const {main, firstForm, h1} = start(app, title, data);
+  const { main, firstForm, h1 } = start(app, title, data);
 
   firstForm.addEventListener('submit', (event) => {
     event.preventDefault();

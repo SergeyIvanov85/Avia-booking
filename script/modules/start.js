@@ -42,9 +42,6 @@ const createFirstForm = (data) => {
   
   select.append(...options);
 
-
-
-
   const label = createElement('label', {
     className: 'field__label',
     textContent: 'Укажите количество человек (max: 6)',
@@ -77,17 +74,15 @@ const start = (app, title, data) => {
   const main = creteMain();
   const firstForm = createFirstForm(data);
 
-
-
-
   main.append(firstForm);
+ 
   app.append(h1, main);
 
   return {
     main,
     firstForm,
     h1,
-  }
+  };
 };
 
 export default start;

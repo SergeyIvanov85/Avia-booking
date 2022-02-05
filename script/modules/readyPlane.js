@@ -9,7 +9,7 @@ const readyPlane = (forms, main, tourData) => {
 
       for (const element of form.elements) {
         element.disabled = true;
-      }
+      };
 
       data.push({
         name: form.name.value,
@@ -19,7 +19,7 @@ const readyPlane = (forms, main, tourData) => {
       if (forms.length === data.length) {
         forms.forEach(form => form.remove());
         airplane(main, data, tourData);
-      }
+      };
     });
   });
 };

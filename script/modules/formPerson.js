@@ -63,7 +63,7 @@ const createFormPerson = (n) => {
   form.append(title, fieldName, fieldTicket, button);
 
   return form;
-}
+};
 
 const getFormPerson = (count) => {
   const forms = [];
@@ -72,7 +72,7 @@ const getFormPerson = (count) => {
   
   for(let i=0; i < count; i++) {
     forms.push(createFormPerson(i));
-  }
+  };
   return forms;
 };
 
